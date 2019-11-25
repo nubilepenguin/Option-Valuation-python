@@ -55,7 +55,7 @@ def simulate_gbm():
 
     # stock price paths
     rand = np.random.standard_normal((M,I))
-    S = np.zeros(rand)
+    S = np.zeros_like(rand)
     S[0] = S0 #initial values
     for t in range(1,M):
         S[t] = S[t - 1] * np.exp((r - vol ** 2 / 2) * dt +
@@ -64,7 +64,7 @@ def simulate_gbm():
     gbm['returns'] = np.log(gbm['index'] / gbm['index'].shift(1))
 
     # Realized Volatility
-    gbm['rea_var'] = 252 * np.cumsum(gbm['returns'] ** 2) / np.arrange(len(gbm))
+    gbm['rea_var'] = 252 * np.cumsum(gbm['returns'] ** 2) / np.arange(len(gbm))
     gbm['rea_vol'] = np.sqrt(gbm['rea_var'])
     gbm = gbm.dropna()
     return gbm
@@ -179,4 +179,10 @@ def rolling_statistics(data):
     plt.axhline(co.mean(), color='r', ls='dashed', lw=1.5)
     plt.show()
 
-
+# data = simulate_gbm()
+# print_statistics(data)
+# quotes_returns(data)
+# return_histogram(data)
+# return_qqplot(data)
+# realized_volatility(data)
+# rolling_statistics(data)
