@@ -9,8 +9,6 @@ start = datetime(2015, 2, 9)
 
 end = datetime(2017, 5, 24)
 
-f = web.DataReader('GDP', 'fred', start, end)
+f = web.DataReader('SPY', 'yahoo', start, end)
 
-f.head()
-
-import quandl
+print(f.head())
