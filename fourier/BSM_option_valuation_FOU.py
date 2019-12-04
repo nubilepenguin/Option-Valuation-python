@@ -129,7 +129,7 @@ def BSM_call_value_FFT(S0, K, T, r, sigma):
     b = 0.5 * N * eps - k
     u = np.arange(1, N + 1, 1)
     vo = eta * (u - 1)
-    # Modifications to Ensure int_valueegrability
+    # Modifications to Ensure integrability
     if S0 >= 0.95 * K : #ITM
         alpha = 1.5
         v = vo - (alpha + 1) * 1j
