@@ -12,7 +12,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.rcParams['font.family'] = 'serif'
 
-from M76_valuation_FFT import M76_value_call_FFT
+from Merton_jump.M76_valuation_FFT import M76_value_call_FFT
 #
 # Market Data from www.eurexchange.com
 # as of 30. September 2014

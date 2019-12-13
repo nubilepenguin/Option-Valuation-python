@@ -6,7 +6,8 @@
 
 import math
 import numpy as np
-
+import os
+root_path = os.path.dirname(os.getcwd())
 np.set_printoptions(suppress=True, formatter={'all': lambda x: '%5.3f' % x})
 import pandas as pd
 from scipy.optimize import brute, fmin, minimize
@@ -24,7 +25,7 @@ kappa_r, theta_r, sigma_r = CIR_calibration()
 #
 # Market Data from www.eurexchange.com
 # as of 30. September 2014 #
-h5 = pd.HDFStore('option_data.h5', 'r')
+h5 = pd.HDFStore(root_path + '/calibration/option_data.h5', 'r')
 data = h5['data']  # European call & put option data (3 maturities)
 h5.close()
 
