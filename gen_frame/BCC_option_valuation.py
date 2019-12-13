@@ -4,7 +4,7 @@
 
 import numpy as np
 from scipy.integrate import quad
-from CIR_zcb_valuation import B
+from gen_frame.CIR_zcb_valuation import B
 import warnings
 warnings.simplefilter('ignore')
 
